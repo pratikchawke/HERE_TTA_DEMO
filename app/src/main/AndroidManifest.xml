@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.pratik.here_tta_demo">
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <application
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <meta-data
+            android:name="com.here.android.maps.appid"
+            android:value="Idcp0WV3X5eJTC0ZyXFn" />
+        <meta-data
+            android:name="com.here.android.maps.apptoken"
+            android:value="LL9lL-OcDQykgcyFnkvuvA" />
+        <meta-data
+            android:name="com.here.android.maps.license.key"
+            android:value="SFa7T7Vaw8D+7Vb+PMDKG//Cgp51MGH1g+Pat45PGLsNzrPtBQgG0dNzOQXrMIcnlpzy5jkdsVVp7qw8Mwx3OaNoNZjMlWiiq9nyK9iVPQ5i1ts86QxnRzLbN2zlUAOQOggPEMwEGxYT/MR+6ESSoW0ACDbN5lglrNku8MWe2MHkB1tRnYoR0QLRyP+J/Ll4UNdLEeKSDPwrnSTmNORiIVmSpc5GEcR8PoXqYL8d6sgLJiNXIa0DhwA9hHxbeK56iv98kAiXBVSoaPO6NTcpZNGMzSG9MRJ2Xun3KcDI+PUviUbYVGyEb8FPAb9s0zVtAkIboTrj/eHi2boRIgg4FwanrL8dTC9OF1BDc62Rzv5LLWCSkXjijlPbM2XISPXy3++geraSstp5TY9in4dqLVuzE6Tmks99+zCpC/Vq5seYZRNr9WG+fPpurlCDfDsAXwoMVfDb+Sr6kYKDDYuOalU2Cu3/PMz6KMMUm6EzKnNch1UEzRNMKHkQJ8bB/Adbf9fqkKqj8mFP+TWcWVNIyI/mXwHtcjXHfrx9SjIjY3z2vnMdIAF0UN3q533L7e5mh2y/amPYPbaktfYKNbx4zvOEGRDqvgX7i+LVgFsfoWGPfOoM4gpi67pB3mRFonVpddPFuxBvRFmLqyWOT2Z98Et75N40NWrkPHt2qIPpqak=" />
+    </application>
+
+</manifest>
