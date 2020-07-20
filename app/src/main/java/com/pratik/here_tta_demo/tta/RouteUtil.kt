@@ -1,4 +1,4 @@
-package com.pratik.here_tta_demo
+package com.pratik.here_tta_demo.tta
 
 import com.here.android.mpa.common.GeoCoordinate
 import com.here.android.mpa.routing.RouteOptions

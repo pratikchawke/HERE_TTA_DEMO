@@ -1,4 +1,4 @@
-package com.pratik.here_tta_demo
+package com.pratik.here_tta_demo.tta
 
 import android.Manifest
 import android.app.AlertDialog
@@ -21,14 +21,15 @@ import com.here.android.mpa.mapping.Map
 import com.here.android.mpa.mapping.MapRoute
 import com.here.android.mpa.mapping.MapView
 import com.here.android.mpa.routing.*
-import com.pratik.here_tta_demo.RouteUtil.RouteListener
-import com.pratik.here_tta_demo.RouteUtil.createRoute
+import com.pratik.here_tta_demo.R
+import com.pratik.here_tta_demo.tta.RouteUtil.RouteListener
+import com.pratik.here_tta_demo.tta.RouteUtil.createRoute
 
 
 /**
  * Main activity which launches map view and handles Android run-time requesting permission.
  */
-class MainActivity : AppCompatActivity() {
+class RouteTTAActivity : AppCompatActivity() {
     private var m_mapView: MapView? = null
     private var m_map: Map? = null
     private var m_route: Route? = null
@@ -38,7 +39,7 @@ class MainActivity : AppCompatActivity() {
     private var m_calculateRouteBtn: Button? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_tta_main)
         m_mapView = findViewById(R.id.mapView)
         m_calculateRouteBtn = findViewById(R.id.btnCalculateRoute)
         m_calculateRouteBtn!!.setEnabled(false)
@@ -123,7 +124,7 @@ class MainActivity : AppCompatActivity() {
                 m_mapView!!.map = m_map
                 m_calculateRouteBtn!!.isEnabled = true
             } else {
-                AlertDialog.Builder(this@MainActivity).setMessage("Error : ${error.name}${error.details}".trimIndent())
+                AlertDialog.Builder(this@RouteTTAActivity).setMessage("Error : ${error.name}${error.details}".trimIndent())
                     .setTitle(R.string.engine_init_error)
                     .setNegativeButton(android.R.string.cancel,
                         DialogInterface.OnClickListener { dialog, which -> finish() }).create()
