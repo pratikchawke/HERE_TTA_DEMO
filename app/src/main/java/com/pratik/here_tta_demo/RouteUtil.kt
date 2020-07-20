@@ -27,23 +27,24 @@ object RouteUtil {
         /* Finally set the route option */routePlan.routeOptions = routeOptions
 
         /* Define waypoints for the route */
-        /* START: Holländerstraße, Wedding, 13407 Berlin */
+        /* START: 401 Franklin St, Houston, TX 77201, United States*/
         val startPoint = RouteWaypoint(
-            GeoCoordinate(52.562755700200796, 13.34599438123405)
+            GeoCoordinate(29.766173, -95.364624)
         )
 
-        /* MIDDLE: Lynarstraße 3 */
-        val middlePoint = RouteWaypoint(
-            GeoCoordinate(52.54172, 13.36354)
-        )
+        /* MIDDLE: */
+//        val middlePoint = RouteWaypoint(
+//            GeoCoordinate()
+//        )
 
-        /* END: Agricolastraße 29, 10555 Berlin */
+        /* END: Waste Management Inc, Main street, Houston, TX, USA */
         val destination = RouteWaypoint(
-            GeoCoordinate(52.520720371976495, 13.332345457747579)
+            GeoCoordinate(29.756607, -95.365483)
         )
 
-        /* Add both waypoints to the route plan */routePlan.addWaypoint(startPoint)
-        routePlan.addWaypoint(middlePoint)
+        /* Add both waypoints to the route plan */
+        routePlan.addWaypoint(startPoint)
+//        routePlan.addWaypoint(middlePoint)
         routePlan.addWaypoint(destination)
         return routePlan
     }

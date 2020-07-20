@@ -116,22 +116,14 @@ class MainActivity : AppCompatActivity() {
      * Also in callback check if initialization completed successfully
      */
     private fun initMap() {
-        MapEngine.getInstance().init(
-            ApplicationContext(applicationContext)
-        ) { error ->
+        MapEngine.getInstance().init(ApplicationContext(applicationContext)) { error ->
             if (error == OnEngineInitListener.Error.NONE) {
                 /* get the map object */
                 m_map = Map()
                 m_mapView!!.map = m_map
                 m_calculateRouteBtn!!.isEnabled = true
             } else {
-                AlertDialog.Builder(this@MainActivity).setMessage(
-                    """
-                        Error : ${error.name}
-                        
-                        ${error.details}
-                        """.trimIndent()
-                )
+                AlertDialog.Builder(this@MainActivity).setMessage("Error : ${error.name}${error.details}".trimIndent())
                     .setTitle(R.string.engine_init_error)
                     .setNegativeButton(android.R.string.cancel,
                         DialogInterface.OnClickListener { dialog, which -> finish() }).create()
@@ -145,10 +137,8 @@ class MainActivity : AppCompatActivity() {
          * Receive arrival time for the whole m_route, if you want to get time only for part of
          * m_route pass parameter in bounds 0 <= m_route.getSublegCount()
          */
-        val ttaExcluding =
-            m_route!!.getTtaExcludingTraffic(Route.WHOLE_ROUTE)
-        val ttaIncluding =
-            m_route!!.getTtaIncludingTraffic(Route.WHOLE_ROUTE)
+        val ttaExcluding = m_route!!.getTtaExcludingTraffic(Route.WHOLE_ROUTE)
+        val ttaIncluding = m_route!!.getTtaIncludingTraffic(Route.WHOLE_ROUTE)
         val tvInclude = findViewById<TextView>(R.id.tvTtaInclude)
         tvInclude.text = "Tta included: " + ttaIncluding!!.duration.toString()
         val tvExclude = findViewById<TextView>(R.id.tvTtaExclude)
